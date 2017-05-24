@@ -26,3 +26,29 @@
     opacity: .61;
   }
 }
+
+.welcome {
+  @include center($extend: false);
+  position: relative;
+  width: 100%;
+  max-width: 80%;
+  color: $gray;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 100;
+  .logo {
+    margin: 0 auto remcalc(120);
+  }
+  .header {
+    @include just-size(28);
+    font-family: Gotham-Book;
+    padding: 0 0 remcalc(65);
+  }
+  .description {
+    @include just-size(17);
+    font-family: Gotham-Light;
+    line-height: remcalc(28);
+  }
+}
+
