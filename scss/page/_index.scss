@@ -17,7 +17,7 @@
   &:after {
     width: 100%;
     height: 100%;
-    opacity: .5;
+    opacity: .7;
   }
 
   &:before {
@@ -32,23 +32,30 @@
   position: relative;
   width: 100%;
   max-width: 80%;
+  font-family: Gotham-Book;
   color: $gray;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
   z-index: 100;
+
   .logo {
-    margin: 0 auto remcalc(120);
+    margin: 0 auto remcalc(50);
   }
+
   .header {
-    @include just-size(28);
-    font-family: Gotham-Book;
-    padding: 0 0 remcalc(65);
+    @include just-size(16);
+    padding: 0 0 remcalc(25);
   }
+
   .description {
-    @include just-size(17);
-    font-family: Gotham-Light;
+    @include just-size(10);
     line-height: remcalc(28);
+    padding: 0 0 remcalc(15);
+  }
+
+  .link-to {
+    color: $gray;
   }
 }
 
