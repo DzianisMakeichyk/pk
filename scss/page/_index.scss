@@ -116,8 +116,27 @@
   }
 
   .link-to {
+    position: relative;
     color: $gray;
     cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: remcalc(-5);
+      width: 0;
+      height: 150%;
+      background: $deep-sea-blue;
+      transition: .6s ease;
+      z-index: -1;
+    }
+
+    &:hover {
+      &:before {
+        content: '';
+        width: 105%;
+      }
+    }
   }
 }
 
