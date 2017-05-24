@@ -1,3 +1,8 @@
+::selection {
+  color: $sea-blue;
+  background-color: $deep-sea-blue;
+}
+
 .hello {
   position: relative;
   width: 100%;
@@ -112,6 +117,7 @@
 
   .link-to {
     color: $gray;
+    cursor: pointer;
   }
 }
 
