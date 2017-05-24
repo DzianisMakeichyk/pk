@@ -2,7 +2,9 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url('../images/background.png');
+  background-image: url('../images/background.png');
+  background-color: $sea-blue;
+  background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,19 +13,22 @@
   &:before {
     content: '';
     @include center($extend: false);
-    background-color: $sea-blue;
   }
 
   &:after {
     width: 100%;
     height: 100%;
-    opacity: .7;
+    background-color: $sea-blue;
+    background-blend-mode: multiply;
+    opacity: .1;
   }
 
   &:before {
     width: calc(100% - 35px);
     height: calc(100% - 35px);
-    opacity: .61;
+    background-color: $deep-sea-blue;
+    background-blend-mode: multiply;
+    opacity: .31;
   }
 }
 
@@ -31,7 +36,6 @@
   @include center($extend: false);
   position: relative;
   width: 100%;
-  max-width: 80%;
   font-family: Gotham-Book;
   color: $gray;
   text-align: center;
@@ -41,6 +45,7 @@
 
   .logo {
     margin: 0 auto remcalc(50);
+    max-width: 80%;
   }
 
   .header {
@@ -50,8 +55,10 @@
 
   .description {
     @include just-size(10);
-    line-height: remcalc(28);
-    padding: 0 0 remcalc(15);
+    max-width: 85%;
+    margin: 0 auto;
+    line-height: remcalc(20);
+    padding: 0 0 remcalc(30);
   }
 
   .link-to {
