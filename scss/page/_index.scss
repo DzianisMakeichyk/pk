@@ -13,13 +13,13 @@
   &:before {
     content: '';
     @include center($extend: false);
+    background-blend-mode: multiply;
   }
 
   &:after {
     width: 100%;
     height: 100%;
     background-color: $sea-blue;
-    background-blend-mode: multiply;
     opacity: .1;
   }
 
@@ -27,8 +27,12 @@
     width: calc(100% - 35px);
     height: calc(100% - 35px);
     background-color: $deep-sea-blue;
-    background-blend-mode: multiply;
     opacity: .31;
+
+    @include breakpoint(small) {
+      width: calc(100% - 25px);
+      height: calc(100% - 25px);
+    }
   }
 }
 
@@ -44,13 +48,33 @@
   z-index: 100;
 
   .logo {
-    margin: 0 auto remcalc(50);
+    margin: 0 auto remcalc(60);
     max-width: 80%;
+
+    @include breakpoint(small) {
+      max-width: remcalc(400);
+      margin: 0 auto remcalc(90);
+    }
+
+    @include breakpoint(large) {
+      max-width: remcalc(530);
+      margin: 0 auto remcalc(120);
+    }
   }
 
   .header {
     @include just-size(16);
-    padding: 0 0 remcalc(25);
+    padding: 0 0 remcalc(30);
+
+    @include breakpoint(small) {
+      @include just-size(22);
+      padding: 0 0 remcalc(55);
+    }
+
+    @include breakpoint(large) {
+      @include just-size(28);
+      padding: 0 0 remcalc(70);
+    }
   }
 
   .description {
@@ -58,7 +82,32 @@
     max-width: 85%;
     margin: 0 auto;
     line-height: remcalc(20);
-    padding: 0 0 remcalc(30);
+
+    @include breakpoint(small) {
+      @include just-size(14);
+      line-height: 1.8;
+    }
+
+    @include breakpoint(medium) {
+    }
+
+    @include breakpoint(large) {
+      @include just-size(18);
+      max-width: 83%;
+      line-height: 1.9;
+    }
+
+    &.bottom {
+      padding: 0 0 remcalc(45);
+
+      @include breakpoint(small) {
+        padding: 0 0 remcalc(65);
+      }
+
+      @include breakpoint(small) {
+        padding: 0 0 remcalc(105);
+      }
+    }
   }
 
   .link-to {

@@ -55,8 +55,12 @@ $font-size: ($default-size * 1px) !default;
 
 /* Typography Map */
 $fonts-variables: (
-        10: remcalc(18),
-        16: remcalc(24)
+        10: remcalc(12),
+        14: remcalc(16),
+        16: remcalc(20),
+        18: remcalc(20),
+        22: remcalc(24),
+        28: remcalc(32)
 );
 
 @mixin just-size($font) {
