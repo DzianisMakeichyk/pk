@@ -1,0 +1,67 @@
+/* Breakpoints */
+@mixin breakpoint($point) {
+  @if $point == small {
+    @media only screen and (min-width: 360px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == medium-lg {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media only screen and (min-width: 1280px) {
+      @content;
+    }
+  } @else if $point == extralarge {
+    @media only screen and (min-width: 1600px) {
+      @content;
+    }
+  }
+}
+
+/* Fonts */
+@mixin font-face($font-family, $file-path) {
+  @font-face {
+    font-family: $font-family;
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+    url('#{$file-path}.woff') format('woff'),
+    url('#{$file-path}.ttf') format('truetype'),
+    url('#{$file-path}.svg##{$font-family}') format('svg');
+  }
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+      font-family: $font-family;
+      src: url('#{$file-path}.svg##{$font-family}') format('svg');
+    }
+  }
+}
+
+@include font-face(Gotham-Book, '../fonts/Gotham-Book/Gotham-Book');
+@include font-face(Gotham-Medium, '../fonts/Gotham-Medium/Gotham-Medium');
+
+
+$default-size: 16 !default;
+$font-size: ($default-size * 1px) !default;
+
+/* Rem Calculation */
+@function remcalc($size) {
+  @return (($size / $default-size) * 1rem);
+}
+
+/* Typography Map */
+$fonts-variables: (
+        12: remcalc(16)
+);
+
+@mixin just-size($font) {
+  @if map-has-key($fonts-variables, $font) { /* Check if font size exist */
+    $value: #{map-get($fonts-variables, $font)}; /* Store size in variable */
+    font-size: ($font / $default-size) * 1rem;
+    line-height: $value;
+  }
+}

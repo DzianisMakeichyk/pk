@@ -1,0 +1,18 @@
+@mixin center($extend: true) {
+  @if $extend {
+    @extend %center;
+  } @else {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+%center {
+  @include center($extend: false);
+}
+
+/* @include center($extend: false); / @include center; */
+
+/* 0px 0px 20px 5px rgba(0,0,0,1) */

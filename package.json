@@ -1,0 +1,33 @@
+{
+  "devDependencies": {
+    "autoprefixer": "6.x",
+    "browser-sync": "2.x",
+    "browsersync": "0.0.1-security",
+    "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "gulp-plumber": "1.x",
+    "gulp-postcss": "6.x",
+    "gulp-sass": "2.1",
+    "gulp-sass-lint": "^1.2.0",
+    "gulp-sourcemaps": "1.x",
+    "node-fetch": "1.x",
+    "postcss-discard-duplicates": "2.x",
+    "postcss-discard-empty": "2.x",
+    "postcss-flexbugs-fixes": "2.x",
+    "postcss-focus": "1.x",
+    "postcss-opacity": "3.x",
+    "postcss-round-subpixels": "1.x",
+    "postcss-style-guide": "0.x",
+    "postcss-vmin": "2.x",
+    "postcss-zindex": "2.x",
+    "space-preconfigured-eslint": "^1.4.11"
+  },
+  "externals": {
+    "jquery": "jQuery"
+  },
+  "directories": {
+    "dist": "js"
+  },
+  "name": "pencilsharpener",
+  "private": true
+}

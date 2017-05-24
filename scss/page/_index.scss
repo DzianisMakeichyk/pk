@@ -1,0 +1,28 @@
+.hello {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('../images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:after,
+  &:before {
+    content: '';
+    @include center($extend: false);
+    background-color: $sea-blue;
+  }
+
+  &:after {
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+  }
+
+  &:before {
+    width: calc(100% - 35px);
+    height: calc(100% - 35px);
+    opacity: .61;
+  }
+}
